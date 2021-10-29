@@ -80,7 +80,7 @@ async function run() {
 run().catch(console.dir)
 
 app.get('/', (req, res) => {
-    res.send('Take Tour server is connected');
+    res.send('this is Take  Tour new server is connected');
 });
 
 app.listen(port, (req, res) => {

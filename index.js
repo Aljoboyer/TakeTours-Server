@@ -33,6 +33,12 @@ async function run() {
             const result = await TourEventsCollection.findOne(query);
             res.send(result)
         })
+        //POST api 
+        app.post('/events', async(req,res) => {
+            const event = req.body;
+            const result = await TourEventsCollection.insertOne(event);
+            res.json(result)
+        })
         //POST api
         app.post('/registerevents', async(req, res) => {
             const event = req.body;
@@ -72,6 +78,8 @@ async function run() {
             const result = await RegisterEventsCollection.updateOne(filter,updatedoc,option)
             res.json(result)
         })
+        
+
     }
     finally{
 
